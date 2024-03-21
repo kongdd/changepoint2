@@ -2,6 +2,8 @@ library(foreach)
 library(iterators)
 library(tidyverse)
 
+library(rgee2)
+
 d <- fread("data-raw/Elasticity_forest_vs_nonforest.csv")
 # df = melt(d, "month_scale")
 # ggplot(df, aes(month_scale, value)) +

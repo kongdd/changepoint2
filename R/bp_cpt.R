@@ -1,4 +1,6 @@
-#' @export 
+# 只有一个突变点
+
+#' @export
 bp_cpt <- function(x) {
   if (all(is.na(x))) {
     data.frame(mean = NA, mean_conf = NA, var = NA, var_conf = NA) # quickly return
@@ -6,9 +8,9 @@ bp_cpt <- function(x) {
     cpt_mean <- cpt.mean(x, method = "AMOC", class = F) # mean changepoint
     cpt_var <- cpt.var(x, method = "AMOC", class = F) # var changepoint
 
-    # 调整断点以保证分段回归的长度
-    cpt_mean <- cpt_adjust(cpt_mean)
-    cpt_var <- cpt_adjust(cpt_var)
+    # # 调整断点以保证分段回归的长度
+    # cpt_mean <- cpt_adjust(cpt_mean)
+    # cpt_var <- cpt_adjust(cpt_var)
 
     data.frame(mean = cpt_mean[1], mean_conf = cpt_mean[2], var = cpt_var[1], var_conf = cpt_var[2]) # quickly return
   }

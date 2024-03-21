@@ -13,5 +13,5 @@
 #' NA bp will return NA
 #' @export
 check_bp <- function(bp, n = 34, k = 5) {
-    pmin(bp[1], n - k + 1) %>% pmax(k)
+  pmin(bp[1], n - k + 1) %>% pmax(k)
 }
